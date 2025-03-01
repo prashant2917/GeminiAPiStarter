@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun PromptView(promptViewModel: PromptViewModel) {
     val prompt by promptViewModel.promptText.collectAsState()
+
     Row {
         TextField(
             value = prompt,
@@ -33,7 +34,7 @@ fun PromptView(promptViewModel: PromptViewModel) {
                      context.resources,
                      images[selectedImage.intValue]
                  )*/
-                //  bakingViewModel.sendPrompt(bitmap, prompt)
+                promptViewModel.sendPrompt(null, prompt)
 
             },
             enabled = prompt.isNotEmpty(),
